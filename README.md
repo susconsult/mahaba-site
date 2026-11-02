@@ -1,6 +1,6 @@
 # Mahaba Beach – website
 
-Website voor **Mahaba Beach**, een klein strandresort in het vissersdorp Ununio (Tanzania), tussen Dar es Salaam en Bagamoyo. Uitgebaat door Bea en Sadi Msumi. Bloops Tours is hun eigen snorkeltour-tak.
+Website voor **Mahaba Beach**, een klein strandresort in het vissersdorp Ununio (Tanzania), tussen Dar es Salaam en Bagamoyo. Uitgebaat door Bea en Saddy Msumi. Bloops Tours is hun eigen snorkeltour-tak.
 
 Wolfpakket van SUS Consult. Statische site, gepubliceerd als Cloudflare Worker `mahaba-site`.
 
@@ -57,7 +57,7 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 
 - Domein: is mahababeachresort.com van hen, en wie beheert het? Daarna `sitemap.xml` toevoegen met de juiste domeinnaam.
 - Instagram van Bea (@beatriceanthoniozmsumi) op de site zetten? Eerst haar akkoord vragen.
-- Sinds welk jaar baten Bea en Sadi Mahaba uit (staat nu niet op de site).
-- Lovable-tekst "Sadi is a local Rastafarian…" is weggelaten tot Pieter bevestigt dat het klopt.
-- Foto van Bea en Sadi zelf (hosts-blok toont nu de badge).
+- Sinds welk jaar baten Bea en Saddy Mahaba uit (staat nu niet op de site).
+- Lovable-tekst "Saddy is a local Rastafarian…" is weggelaten tot Pieter bevestigt dat het klopt.
+- Foto van Bea en Saddy zelf (hosts-blok toont nu de badge).
 - Drone-video in hogere resolutie (nu 960×540).
