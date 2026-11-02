@@ -70,3 +70,17 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 - Foto's (nov 2026, 2e reeks): Bloops-galerij (boot, instappen, boeg, zandbank, gasten, video bloops-boat.mp4 zonder geluid, shop, materiaal); overlanders (Defender, Unimog) op /stay; mahaba-from-sea in home-galerij.
 - Food: maaltijden op reservatie, knop 'Reserve a meal' naar Bea (WhatsApp). Getting here: coast-from-sea en overland-saviem.
 - Later: flyer voor Bea (5 pagina's: logo / kamers + restaurant / Bloops / contact / package).
+
+## Boekingsformulier (nov 2026)
+- Formulier op /getting-here#contact. Alle boek-knoppen gaan erheen, met het type alvast gekozen via `?type=room|camping|trip|package|meal`.
+- Geen WhatsApp-knoppen meer; nummers staan nog als tekst (footer, contactblok).
+- Werking: browser → Worker `src/index.js` (`POST /api/booking`, controleert de velden, spam-val `website`) → Apps Script van de Google Sheet → rij in tab "Aanvragen" + meldingsmail naar mahababeach@gmail.com (reply-to = gast).
+- Alleen een antwoord `{"ok":true}` van het script telt als geslaagd. Elke aanvraag heeft een ID (MB-JJJJMMDD-XXXX); het script weigert dubbels.
+- Cloudflare-variabele: `SHEET_URL` (type Secret) = adres van de web-app (`script.google.com/macros/s/.../exec`). Zonder deze variabele geeft het formulier een foutmelding.
+- Script: `apps-script/Code.gs`. Na elke wijziging een nieuwe versie van de implementatie publiceren.
+
+| Wat | Waar | Login |
+|---|---|---|
+| Sheet "Mahaba Beach boekingen" | Google Drive, KLANTEN/Mahaba Beach | pieter@susconsult.be |
+| Apps Script (web-app) | in die sheet | pieter@susconsult.be |
+| Worker mahaba-site + variabele SHEET_URL | Cloudflare | pieter@susconsult.be |

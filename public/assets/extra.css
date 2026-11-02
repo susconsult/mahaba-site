@@ -62,3 +62,25 @@ header nav a[aria-current="page"]{color:var(--sunset);text-decoration:underline;
 .mnav li a[aria-current="page"]{color:var(--sunset)}
 @media (min-width:768px){.mnav{display:none}}
 @media (prefers-reduced-motion:reduce){.mnav-bars i{transition:none}}
+
+/* boekingsformulier (Getting here) */
+.bk{display:flex;flex-direction:column;gap:18px}
+.bk-field{display:flex;flex-direction:column;gap:6px;min-width:0;border:0;padding:0;margin:0}
+.bk-field[hidden],.bk-row[hidden]{display:none}
+.bk-field>label,.bk-field>legend{font-size:.85rem;font-weight:700;color:var(--ink);padding:0;margin-bottom:6px}
+.bk-opt{font-weight:400;color:var(--muted-foreground)}
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bk input[type=text],.bk input[type=email],.bk input[type=tel],.bk input[type=date],.bk input[type=number],.bk select,.bk textarea{width:100%;min-width:0;font:inherit;font-size:16px;color:var(--ink);background:var(--cream);border:2px solid var(--ink);border-radius:10px;padding:10px 12px;min-height:46px}
+.bk textarea{resize:vertical}
+.bk input:focus-visible,.bk select:focus-visible,.bk textarea:focus-visible{outline:3px solid var(--sunset);outline-offset:1px}
+.bk-chips{display:flex;flex-wrap:wrap;gap:8px}
+.bk-chips label{cursor:pointer}
+.bk-chips input{position:absolute;opacity:0;width:1px;height:1px}
+.bk-chips span{display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font-weight:700;font-size:.9rem;background:var(--cream);color:var(--ink);transition:background .15s}
+.bk-chips input:checked+span{background:var(--deep);color:var(--deep-foreground);box-shadow:3px 3px 0 0 var(--sunset)}
+.bk-chips input:focus-visible+span{outline:3px solid var(--sunset);outline-offset:2px}
+.bk-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.bk-note{font-size:.85rem;color:var(--muted-foreground);margin:0}
+.bk-error{margin:0;border:2px solid var(--chili);border-radius:10px;padding:10px 12px;color:var(--chili);font-weight:700;font-size:.9rem}
+.bk button[disabled]{opacity:.6;cursor:wait}
+.bk-done{margin-top:2rem;border:2px dashed var(--ink);border-radius:14px;padding:20px;background:var(--cream)}
