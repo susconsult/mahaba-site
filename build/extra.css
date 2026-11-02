@@ -45,3 +45,20 @@ header nav a[aria-current="page"]{color:var(--sunset);text-decoration:underline;
 .lightbox-close{width:2.5rem;height:2.5rem;border-radius:999px;border:2px solid var(--ink);background:var(--gradient-sun);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;box-shadow:var(--shadow-stamp)}
 
 .notfound{padding-block:clamp(48px,8vw,96px) clamp(80px,12vw,140px)}
+
+/* menu voor gsm */
+.header-actions{display:flex;align-items:center;gap:.75rem}
+.mnav{display:block}
+.mnav summary{list-style:none;cursor:pointer;display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:999px;border:2px solid var(--ink);background:var(--paper);box-shadow:var(--shadow-stamp)}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav-bars{display:grid;gap:4px}
+.mnav-bars i{display:block;width:18px;height:2px;border-radius:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.mnav[open] .mnav-bars i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.mnav[open] .mnav-bars i:nth-child(2){opacity:0}
+.mnav[open] .mnav-bars i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mnav nav{position:absolute;left:0;right:0;top:100%;background:var(--cream);border-top:3px solid var(--sun);box-shadow:var(--shadow-print);padding:.5rem 1.25rem 1.25rem}
+.mnav ul{list-style:none;margin:0;padding:0}
+.mnav li a{display:block;padding:.85rem .25rem;font-family:var(--font-heading);font-size:1.4rem;color:var(--ink);text-decoration:none;border-bottom:1px dashed color-mix(in oklab,var(--ink) 25%,transparent)}
+.mnav li a[aria-current="page"]{color:var(--sunset)}
+@media (min-width:768px){.mnav{display:none}}
+@media (prefers-reduced-motion:reduce){.mnav-bars i{transition:none}}

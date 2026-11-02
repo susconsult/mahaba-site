@@ -20,6 +20,7 @@ LOV = os.path.join(ROOT, "build", "lovable")
 WA_NUMBER = "+255 757 014 929"
 WA_LINK = "https://wa.me/255757014929?text=Hi%20Mahaba%20Beach%2C%20I%27d%20like%20to%20book."
 EMAIL = "mahababeach@gmail.com"
+FACEBOOK = "https://www.facebook.com/mahababeach/"
 
 
 def part(name):
@@ -50,6 +51,14 @@ def header(active):
         cur = ' aria-current="page"' if slug == active else ""
         h = sub(h, f'href="#{anchor}" class=', f'href="/{slug}"{cur} class=')
     h = sub(h, 'href="#contact"', 'href="/getting-here#contact"')
+    # menu voor gsm (Lovable verbergt het menu onder 768px)
+    items = "".join(
+        f'<li><a href="/{s}"{" aria-current=\"page\"" if s == active else ""}>{label}</a></li>'
+        for s, label in [("", "Home"), ("stay", "Stay"), ("food", "Food"), ("bloops-tours", "Bloops Tours"), ("getting-here", "Getting here")])
+    mnav = ('<details class="mnav"><summary aria-label="Menu"><span class="mnav-bars" aria-hidden="true"><i></i><i></i><i></i></span></summary>'
+            f'<nav aria-label="Menu"><ul>{items}</ul></nav></details>')
+    h = sub(h, '<a href="/getting-here#contact" class=', '<div class="header-actions">' + mnav + '<a href="/getting-here#contact" class=')
+    h = sub(h, '>Book</a>', '>Book</a></div>')
     return h
 
 
@@ -155,7 +164,8 @@ def contact(as_page):
     c = sub(c, dt.format("WhatsApp", ph.format("WhatsApp number")), dt.format("WhatsApp", WA_NUMBER))
     c = sub(c, dt.format("E-mail", ph.format("e-mail address")),
                dt.format("E-mail", f'<a href="mailto:{EMAIL}" class="underline decoration-dashed underline-offset-4">{EMAIL}</a>'))
-    c = sub(c, dt.format("Instagram", ph.format("Instagram handle")), "")
+    c = sub(c, dt.format("Instagram", ph.format("Instagram handle")),
+               dt.format("Facebook", f'<a href="{FACEBOOK}" target="_blank" rel="noopener" class="underline decoration-dashed underline-offset-4">facebook.com/mahababeach</a>'))
     c = re.sub(r'<div class="flex flex-col items-start gap-3"><button class="[^"]*" disabled="">Message on WhatsApp</button><mark class="placeholder-text">PLACEHOLDER: <!-- -->button goes live once the WhatsApp number is added</mark></div>',
                f'<a href="{WA_LINK}" target="_blank" rel="noopener" class="{BTN_BIG}">Message on WhatsApp</a>', c)
     if "PLACEHOLDER" in c:
@@ -168,7 +178,8 @@ def footer():
     return sub(f, '<p class="text-sm text-deep-foreground/80">Mahaba Beach · Ununio, Dar es Salaam, Tanzania</p>',
                   '<p class="text-sm text-deep-foreground/80">Mahaba Beach · Ununio, Dar es Salaam, Tanzania</p>'
                   f'<p class="text-sm text-deep-foreground/80"><a href="https://wa.me/255757014929" target="_blank" rel="noopener" class="underline decoration-dashed underline-offset-4">WhatsApp {WA_NUMBER}</a> · '
-                  f'<a href="mailto:{EMAIL}" class="underline decoration-dashed underline-offset-4">{EMAIL}</a></p>')
+                  f'<a href="mailto:{EMAIL}" class="underline decoration-dashed underline-offset-4">{EMAIL}</a> · '
+                  f'<a href="{FACEBOOK}" target="_blank" rel="noopener" class="underline decoration-dashed underline-offset-4">Facebook</a></p>')
 
 
 LIGHTBOX = '''<dialog id="lightbox" class="lightbox" aria-label="Photo"><form method="dialog"><button class="lightbox-close" aria-label="Close photo">×</button></form><img alt=""></dialog>

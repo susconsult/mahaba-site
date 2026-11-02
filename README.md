@@ -12,7 +12,7 @@ Wolfpakket van SUS Consult. Statische site, gepubliceerd als Cloudflare Worker `
 | `/stay` | Kamers ($45 per nacht voor 2) en kamperen ($10 per persoon) |
 | `/food` | Eten en de banda |
 | `/bloops-tours` | Snorkeltrips met prijstabel en het $100-pakket |
-| `/getting-here` | Ligging en boeken (postkaart) |
+| `/getting-here` | Ligging en boeken (postkaart, met WhatsApp, e-mail en Facebook) |
 | `404.html` | Eigen "Lost at sea?"-pagina |
 
 ## Hoe het gebouwd is
@@ -29,6 +29,8 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 ## Onderdelen
 
 - Geen formulier, geen database, geen meetcodes, geen cookies. Boeken gaat via WhatsApp-links (`wa.me/255757014929`) en e-mail.
+- Facebook (facebook.com/mahababeach) staat als gewone link in de postkaart en de footer, bewust niet ingesloten (een embed laadt Facebook-scripts en cookies en vraagt dan een cookiebanner).
+- Menu op gsm: hamburgerknop naast "Book" (`<details class="mnav">`, zonder JavaScript), toegevoegd omdat Lovable het menu onder 768px verbergt.
 - Geen variabelen of secrets in Cloudflare.
 - Externe bronnen: alleen Google Fonts (Fraunces, Manrope, Caveat).
 
@@ -49,6 +51,7 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 
 - WhatsApp: +255 757 014 929
 - E-mail: mahababeach@gmail.com
+- Facebook: https://www.facebook.com/mahababeach/
 
 ## Open
 
