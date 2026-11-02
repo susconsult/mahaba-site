@@ -36,7 +36,7 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 
 ## Beelden
 
-`public/assets/img/` — foto's van Mahaba, verkleind voor het web. `public/assets/hero-drone.mp4` is een lus van 20 s uit de drone-video (zonder geluid, groene close-ups eruit). Logo en badge: `public/assets/logo-mahaba-beach.png`, `public/assets/badge-mahaba-beach.png`.
+`public/assets/img/` — foto's van Mahaba, verkleind voor het web. `public/assets/hero-drone.mp4` is een lus van 17 s uit de drone-video (zonder geluid; groene close-ups en de snelle draai in het begin eruit). Logo en badge: `public/assets/logo-mahaba-beach.png`, `public/assets/badge-mahaba-beach.png`.
 
 ## Wat staat waar
 
