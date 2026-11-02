@@ -43,7 +43,7 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 | Wat | Waar | Login |
 |---|---|---|
 | Code | GitHub `susconsult/mahaba-site` | SUS Consult GitHub |
-| Hosting | Cloudflare Worker `mahaba-site` | Cloudflare-account SUS Consult |
+| Hosting | Cloudflare Worker `mahaba-site`, gekoppeld aan deze repo (push naar main = live) — mahaba-site.pieter-2d7.workers.dev | Cloudflare-account SUS Consult |
 | Ontwerp (bron) | Lovable-project `pixel-perfect-replay-09755` | Lovable-account Pieter |
 | Domein | nog te bepalen (in de video staat mahababeachresort.com) | ? |
 
@@ -55,7 +55,6 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 
 ## Open
 
-- Worker `mahaba-site` koppelen aan deze repository (bestond al met een "Hello world"-code; workers.dev-adres stond uit).
 - Domein: is mahababeachresort.com van hen, en wie beheert het? Daarna `sitemap.xml` toevoegen met de juiste domeinnaam.
 - Instagram van Bea (@beatriceanthoniozmsumi) op de site zetten? Eerst haar akkoord vragen.
 - Sinds welk jaar baten Bea en Sadi Mahaba uit (staat nu niet op de site).
