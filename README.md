@@ -65,4 +65,5 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 ## Contact per onderdeel (nov 2026)
 - Bea (+255 757 014 929): kamers, keuken, packages. Staat overal.
 - Saddy (+255 689 182 161): Bloops boottochten. Enkel de knop "Book a tour" op /bloops-tours.
-- Open: betekenis van de naam BLOOPS toevoegen zodra Bea die geeft; nieuwe foto's (beach bar, eten op het strand, Bloops-shop en -boot) volgen van Bea.
+- Open: betekenis van de naam BLOOPS toevoegen zodra Bea die geeft.
+- Foto's (nov 2026): bar-wood, banda-wide, bbq-sign op /food; porch, room-bed, room-side op /stay; bloops-shop op /bloops-tours; beach-huts in de home-galerij. Geen foto van de Bloops-boot (niet nodig volgens Pieter).
