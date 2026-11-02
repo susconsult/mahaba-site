@@ -1,0 +1,47 @@
+/* Aanvullingen op het Lovable-ontwerp (lovable.css). Alleen wat Lovable niet had. */
+
+/* warme filter over de drone-video in de hero */
+.hero-video{filter:sepia(.3) saturate(1.25) contrast(1.05) brightness(1.03)}
+.hero-warm{background:linear-gradient(180deg,rgb(246 183 51 / .45) 0%,rgb(232 109 34 / .3) 70%);mix-blend-mode:soft-light;pointer-events:none}
+@media (prefers-reduced-motion:reduce){.hero-video{display:none}#top{background:var(--deep) url(/assets/hero-drone.jpg) center/cover}}
+
+/* actieve pagina in het menu */
+header nav a[aria-current="page"]{color:var(--sunset);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+
+/* ruimte onder de header op de losse pagina's */
+.page-top{height:clamp(40px,7vw,88px)}
+
+/* prijzen in het boat ticket */
+.tour-prices{width:100%;margin-top:.75rem;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.92rem}
+.tour-prices th,.tour-prices td{padding:.5rem .35rem;text-align:right;white-space:nowrap;border-bottom:1px dashed color-mix(in oklab,var(--ink) 30%,transparent);vertical-align:top}
+.tour-prices th:first-child,.tour-prices td:first-child{text-align:left;white-space:normal;font-weight:700}
+.tour-prices thead th{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--muted-foreground)}
+.tour-prices small{display:block;font-weight:500;color:var(--muted-foreground)}
+.tour-note{margin-top:.75rem;font-size:.85rem;color:var(--muted-foreground)}
+@media (max-width:420px){.tour-prices{font-size:.82rem}.tour-prices th,.tour-prices td{padding:.45rem .2rem}}
+
+/* Mahaba-pakket */
+.package-wrap{padding-block:clamp(64px,9vw,112px)}
+.package{position:relative;display:grid;grid-template-columns:1fr auto;gap:2rem 3rem;align-items:center;background:var(--paper);color:var(--ink);
+  padding:clamp(1.5rem,4vw,3rem);box-shadow:var(--shadow-print);transform:rotate(-1deg)}
+.package-hand{font-size:clamp(1.6rem,3vw,2.1rem);color:var(--sunset);transform:rotate(-2deg)}
+.package-title{margin-top:.75rem;font-size:clamp(1.9rem,3.6vw,2.8rem)!important}
+.package-list{margin:1.75rem 0 0;padding:0;list-style:none;display:grid;gap:.75rem;font-size:1.1rem}
+.package-list li{display:flex;align-items:center;gap:.75rem}
+.dot{width:.625rem;height:.625rem;border-radius:999px;flex-shrink:0}
+.dot-chili{background:var(--chili)}.dot-sun{background:var(--sun)}.dot-palm{background:var(--palm)}
+.package-price{display:grid;justify-items:center;gap:1.5rem}
+.package-stamp{display:grid;place-items:center;width:9rem;height:9rem;border-radius:999px;background:var(--gradient-sun);border:2px solid var(--ink);box-shadow:var(--shadow-stamp);transform:rotate(-6deg)}
+.package-stamp>div{display:grid;place-items:center;width:86%;height:86%;border-radius:999px;border:2px dashed color-mix(in oklab,var(--ink) 50%,transparent);text-align:center}
+.package-amount{display:block;font-family:var(--font-heading);font-size:2.6rem;line-height:1}
+.package-per{display:block;font-size:.6rem;margin-top:.25rem}
+@media (max-width:767px){.package{grid-template-columns:1fr;transform:none}.package-price{justify-items:start}}
+
+/* foto vergroten in de galerij */
+.lightbox{padding:0;border:0;background:transparent;max-width:min(92vw,1100px);max-height:90vh}
+.lightbox::backdrop{background:rgb(10 30 36 / .85)}
+.lightbox img{display:block;max-width:100%;max-height:88vh;object-fit:contain;border:8px solid var(--paper);box-shadow:var(--shadow-print)}
+.lightbox form{position:absolute;top:-6px;right:-6px}
+.lightbox-close{width:2.5rem;height:2.5rem;border-radius:999px;border:2px solid var(--ink);background:var(--gradient-sun);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;box-shadow:var(--shadow-stamp)}
+
+.notfound{padding-block:clamp(48px,8vw,96px) clamp(80px,12vw,140px)}
