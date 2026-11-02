@@ -67,3 +67,4 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 - Saddy (+255 689 182 161): Bloops boottochten. Enkel de knop "Book a tour" op /bloops-tours.
 - Open: betekenis van de naam BLOOPS toevoegen zodra Bea die geeft.
 - Foto's (nov 2026): bar-wood, banda-wide, bbq-sign op /food; porch, room-bed, room-side op /stay; bloops-shop op /bloops-tours; beach-huts in de home-galerij. Geen foto van de Bloops-boot (niet nodig volgens Pieter).
+- Foto's (nov 2026, 2e reeks): Bloops-galerij (boot, instappen, boeg, zandbank, gasten, video bloops-boat.mp4 zonder geluid, shop, materiaal); overlanders (Defender, Unimog) op /stay; mahaba-from-sea in home-galerij.
