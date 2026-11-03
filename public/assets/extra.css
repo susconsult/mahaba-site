@@ -62,3 +62,17 @@ header nav a[aria-current="page"]{color:var(--sunset);text-decoration:underline;
 .mnav li a[aria-current="page"]{color:var(--sunset)}
 @media (min-width:768px){.mnav{display:none}}
 @media (prefers-reduced-motion:reduce){.mnav-bars i{transition:none}}
+
+/* boekingsformulier in de postkaart (/getting-here) */
+.bform{display:grid;gap:1rem}
+.bform-field{display:grid;gap:.35rem}
+.bform-field>span{font-size:.875rem;color:var(--muted-foreground)}
+.bform-field small{font-size:.75rem}
+.bform input,.bform select,.bform textarea{width:100%;min-height:2.75rem;padding:.6rem .8rem;border:2px solid var(--ink);border-radius:.5rem;background:var(--cream);color:var(--ink);font:inherit;font-weight:600}
+.bform textarea{resize:vertical;min-height:5.5rem}
+.bform input:focus-visible,.bform select:focus-visible,.bform textarea:focus-visible{outline:3px solid var(--sun);outline-offset:1px}
+.bform-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.bform-guests input{max-width:8rem}
+.bform-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.bform-error{padding:.75rem 1rem;border:2px solid var(--chili);border-radius:.5rem;color:var(--chili);font-weight:700}
+@media (max-width:420px){.bform-row{grid-template-columns:1fr}}

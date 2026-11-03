@@ -12,27 +12,34 @@ Wolfpakket van SUS Consult. Statische site, gepubliceerd als Cloudflare Worker `
 | `/stay` | Kamers ($45 per nacht voor 2) en kamperen ($10 per persoon) |
 | `/food` | Eten en de banda |
 | `/bloops-tours` | Snorkeltrips met prijstabel en het $100-pakket |
-| `/getting-here` | Ligging en boeken (postkaart, met WhatsApp, e-mail en Facebook) |
+| `/getting-here` | Ligging en boekingsformulier (in de postkaart, `#contact`) |
+| `/thanks` | Bedankpagina na een aanvraag (noindex) |
 | `404.html` | Eigen "Lost at sea?"-pagina |
 
 ## Hoe het gebouwd is
 
-- Het ontwerp is **1-op-1 het Lovable-ontwerp** (`pixel-perfect-replay-09755.lovable.app`). De HTML-blokken van Lovable staan in `build/lovable/*.html`, de stylesheet in `build/lovable/lovable.css`.
-- `build/build.py` vult de echte inhoud in, verdeelt de blokken over de pagina's en schrijft alles naar `public/`.
-- `build/extra.css` bevat alleen wat Lovable niet had: warme filter over de video, prijstabel, pakketblok, actief menu-item, foto vergroten.
-- Er is geen bouwstap op Cloudflare: de gegenereerde bestanden in `public/` worden mee gecommit.
-
-**Iets aanpassen:** wijzig `build/build.py` (teksten, prijzen, contact) of `build/extra.css`, draai `python3 build/build.py`, en commit `build/` én `public/` samen. Lovable-tekst die niet meer gevonden wordt, laat het script stoppen met een melding.
-
-Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`.
+- Het ontwerp komt van Lovable (`pixel-perfect-replay-09755.lovable.app`).
+- **Let op: `public/` is de bron.** `build/build.py` heeft de eerste versie gemaakt, maar loopt achter: latere wijzigingen (foto's, Saddy, eten op reservatie, formulier) zijn rechtstreeks in `public/` gebeurd. Niet meer draaien, anders gaan die verloren.
+- Header en footer staan in elke pagina; een wijziging daaraan doorvoeren op alle pagina's.
+- `public/assets/extra.css`: alles wat Lovable niet had (video-filter, prijstabel, pakket, gsm-menu, foto vergroten, formulier).
 
 ## Onderdelen
 
-- Geen formulier, geen database, geen meetcodes, geen cookies. Boeken gaat via WhatsApp-links (`wa.me/255757014929`) en e-mail.
-- Facebook (facebook.com/mahababeach) staat als gewone link in de postkaart en de footer, bewust niet ingesloten (een embed laadt Facebook-scripts en cookies en vraagt dan een cookiebanner).
-- Menu op gsm: hamburgerknop naast "Book" (`<details class="mnav">`, zonder JavaScript), toegevoegd omdat Lovable het menu onder 768px verbergt.
-- Geen variabelen of secrets in Cloudflare.
-- Externe bronnen: alleen Google Fonts (Fraunces, Manrope, Caveat).
+- **Boekingsformulier** op `/getting-here#contact`. Alle boekknoppen sturen daarheen, met `?for=room|camping|package|bloops|meal` om de keuze voor te vullen. Er staan **geen WhatsApp- of e-maillinks** meer op de site (keuze Pieter, nov 2026). Facebook staat nog als link in de footer.
+- Werkt zonder JavaScript: het formulier post naar `/api/book` (`src/index.js`). Die controleert de velden, geeft elke aanvraag een ID en stuurt ze door naar het Apps Script van de Google Sheet. Alleen een antwoord `{"ok":true}` telt als geslaagd → `/thanks`. Anders terug naar het formulier met een foutmelding (`?error=1`).
+- Spam-val: onzichtbaar veld `website`; is het ingevuld, dan wordt niets bewaard (bot ziet wel de bedankpagina).
+- Apps Script: `apps-script/Code.gs` (kopie, de echte staat in de sheet). Schrijft een rij in tab `Aanvragen`, weigert dubbele ID's, zet per rij een vinkje "Opgevolgd" en stuurt een meldingsmail (`NOTIFY` bovenaan het script; antwoorden gaat rechtstreeks naar de gast).
+- Alleen `/api/*` loopt langs de code (`run_worker_first` in `wrangler.jsonc`); al de rest zijn gewone bestanden.
+- `sitemap.xml` en `robots.txt` voor mahababeach.com.
+- Geen database, geen meetcodes, geen cookies. Externe bronnen: alleen Google Fonts.
+
+## Variabelen in Cloudflare
+
+| Naam | Type | Wat |
+|---|---|---|
+| `SHEET_URL` | Secret | het `.../exec`-adres van de Apps Script web-app |
+
+Lokaal testen: `.dev.vars` met `SHEET_URL=...` (staat in `.gitignore`), dan `npx wrangler dev`.
 
 ## Beelden
 
@@ -45,7 +52,8 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 | Code | GitHub `susconsult/mahaba-site` | SUS Consult GitHub |
 | Hosting | Cloudflare Worker `mahaba-site`, gekoppeld aan deze repo (push naar main = live) — mahaba-site.pieter-2d7.workers.dev | Cloudflare-account SUS Consult |
 | Ontwerp (bron) | Lovable-project `pixel-perfect-replay-09755` | Lovable-account Pieter |
-| Domein | nog te bepalen (in de video staat mahababeachresort.com) | ? |
+| Domein | mahababeach.com, aan de Worker gekoppeld | Cloudflare-account SUS Consult |
+| Aanvragen | Google Sheet "Mahaba Beach – boekingsaanvragen", map KLANTEN/Mahaba Beach | pieter@susconsult.be |
 
 ## Contact klant
 
@@ -55,7 +63,6 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 
 ## Open
 
-- Domein: is mahababeachresort.com van hen, en wie beheert het? Daarna `sitemap.xml` toevoegen met de juiste domeinnaam.
 - Instagram van Bea (@beatriceanthoniozmsumi) op de site zetten? Eerst haar akkoord vragen.
 - Sinds welk jaar baten Bea en Saddy Mahaba uit (staat nu niet op de site).
 - Lovable-tekst "Saddy is a local Rastafarian…" is weggelaten tot Pieter bevestigt dat het klopt.
@@ -63,8 +70,9 @@ Contactgegevens en prijzen staan bovenaan en in de functies van `build/build.py`
 - Drone-video in hogere resolutie (nu 960×540).
 
 ## Contact per onderdeel (nov 2026)
-- Bea (+255 757 014 929): kamers, keuken, packages. Staat overal.
-- Saddy (+255 689 182 161): Bloops boottochten. Enkel de knop "Book a tour" op /bloops-tours.
+- Bea (+255 757 014 929): kamers, keuken, packages.
+- Saddy (+255 689 182 161): Bloops boottochten.
+- Geen van beide nummers staat nog op de site: alles loopt via het formulier.
 - Open: betekenis van de naam BLOOPS toevoegen zodra Bea die geeft.
 - Foto's (nov 2026): bar-wood, banda-wide, bbq-sign op /food; porch, room-bed, room-side op /stay; bloops-shop op /bloops-tours; beach-huts in de home-galerij. Geen foto van de Bloops-boot (niet nodig volgens Pieter).
 - Foto's (nov 2026, 2e reeks): Bloops-galerij (boot, instappen, boeg, zandbank, gasten, video bloops-boat.mp4 zonder geluid, shop, materiaal); overlanders (Defender, Unimog) op /stay; mahaba-from-sea in home-galerij.
