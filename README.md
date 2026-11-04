@@ -77,6 +77,6 @@ Lokaal testen: `.dev.vars` met `SHEET_URL=...` (staat in `.gitignore`), dan `npx
 - Foto's (nov 2026): bar-wood, banda-wide, bbq-sign op /food; porch, room-bed, room-side op /stay; bloops-shop op /bloops-tours; beach-huts in de home-galerij. Geen foto van de Bloops-boot (niet nodig volgens Pieter).
 - Foto's (nov 2026, 2e reeks): Bloops-galerij (boot, instappen, boeg, zandbank, gasten, video bloops-boat.mp4 zonder geluid, shop, materiaal); overlanders (Defender, Unimog) op /stay; mahaba-from-sea in home-galerij.
 - Food: maaltijden op reservatie, knop 'Reserve a meal' naar het formulier (`?for=meal`). Getting here: coast-from-sea en overland-saviem.
-- Drukwerk voor Bea: **A4-poster** en **A5-flyer**. Flyer 5 pagina's: logo / kamers + restaurant / Bloops / contact (mail, website, WhatsApp, ligging) / package. Op drukwerk mag WhatsApp wel (op de site niet).
+- Drukwerk voor Bea: **A4-poster** en **A5-flyer**. Flyer 5 pagina's: logo / kamers + restaurant / Bloops / contact (mail, website, WhatsApp, ligging) / package. Op drukwerk mag WhatsApp wel (op de site niet). Moet zowel in zwart-wit als in kleur goed printen (contrast niet enkel via kleur, geen tekst op foto zonder vlak erachter).
 - Zandbank = Fungu Yasini (Bea schrijft "Yassini"; site houdt "Yasini").
 - Open: welk mailadres de boekingsaanvragen moet krijgen (nu enkel pieter@susconsult.be; vermoedelijk ook mahababeach@gmail.com) — `NOTIFY` in het Apps Script.
