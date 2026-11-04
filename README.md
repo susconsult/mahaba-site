@@ -53,7 +53,7 @@ Lokaal testen: `.dev.vars` met `SHEET_URL=...` (staat in `.gitignore`), dan `npx
 | Hosting | Cloudflare Worker `mahaba-site`, gekoppeld aan deze repo (push naar main = live) — mahaba-site.pieter-2d7.workers.dev | Cloudflare-account SUS Consult |
 | Ontwerp (bron) | Lovable-project `pixel-perfect-replay-09755` | Lovable-account Pieter |
 | Domein | mahababeach.com, aan de Worker gekoppeld | Cloudflare-account SUS Consult |
-| Aanvragen | Google Sheet "Mahaba Beach – boekingsaanvragen", map KLANTEN/Mahaba Beach | pieter@susconsult.be |
+| Aanvragen | Google Sheet "Mahaba Beach – boekingsaanvragen" (https://docs.google.com/spreadsheets/d/1SAf17Q0RiHTzsKwEaw-XszdsiTtqHLgsz4qokOxlMyM), map KLANTEN/Mahaba Beach, script-project "Mahaba Beach boekingen" | pieter@susconsult.be |
 
 ## Contact klant
 
