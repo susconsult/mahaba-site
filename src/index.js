@@ -5,8 +5,11 @@
 const FOR = ["room", "camping", "package", "bloops", "meal"];
 const MAX = { name: 120, email: 200, phone: 40, message: 2000 };
 
-function back(url, kind, params = "") {
-  return Response.redirect(new URL(kind === "ok" ? "/thanks" : `/getting-here?error=1${params}#contact`, url), 303);
+const LANGS = { sw: "Kiswahili", fr: "Français", es: "Español", de: "Deutsch" };
+
+function back(url, kind, params = "", lang = "") {
+  const pre = LANGS[lang] ? `/${lang}` : "";
+  return Response.redirect(new URL(kind === "ok" ? `${pre}/thanks` : `${pre}/getting-here?error=1${params}#contact`, url), 303);
 }
 
 export default {
@@ -20,7 +23,8 @@ export default {
     const get = (k) => String(f.get(k) ?? "").trim();
 
     // spam-val: mensen zien dit veld niet
-    if (get("website")) return back(url, "ok");
+    const lang = LANGS[get("lang")] ? get("lang") : "";
+    if (get("website")) return back(url, "ok", "", lang);
 
     const b = {
       name: get("name").slice(0, MAX.name),
@@ -32,14 +36,16 @@ export default {
       guests: parseInt(get("guests"), 10),
       message: get("message").slice(0, MAX.message),
     };
+    // taal van de gast vooraan in het bericht, zodat Bea weet in welke taal te antwoorden
+    if (lang) b.message = `[${LANGS[lang]}] ${b.message}`.trim();
     const date = /^\d{4}-\d{2}-\d{2}$/;
     const forParam = FOR.includes(b.for) ? `&for=${b.for}` : "";
     if (!b.name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(b.email) || !FOR.includes(b.for) ||
         !date.test(b.arrival) || (b.departure && !date.test(b.departure)) ||
         !(b.guests >= 1 && b.guests <= 50)) {
-      return back(url, "error", forParam);
+      return back(url, "error", forParam, lang);
     }
-    if (!env.SHEET_URL) { console.error("SHEET_URL ontbreekt"); return back(url, "error", forParam); }
+    if (!env.SHEET_URL) { console.error("SHEET_URL ontbreekt"); return back(url, "error", forParam, lang); }
 
     const record = { id: crypto.randomUUID(), created: new Date().toISOString(), ...b };
     try {
@@ -52,11 +58,11 @@ export default {
       const text = await r.text();
       let ok = false;
       try { ok = JSON.parse(text).ok === true; } catch {}
-      if (!ok) { console.error("Sheet gaf geen bevestiging", r.status, text.slice(0, 300)); return back(url, "error", forParam); }
+      if (!ok) { console.error("Sheet gaf geen bevestiging", r.status, text.slice(0, 300)); return back(url, "error", forParam, lang); }
     } catch (e) {
       console.error("Sheet niet bereikbaar", e);
-      return back(url, "error", forParam);
+      return back(url, "error", forParam, lang);
     }
-    return back(url, "ok");
+    return back(url, "ok", "", lang);
   },
 };

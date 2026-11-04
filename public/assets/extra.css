@@ -76,3 +76,13 @@ header nav a[aria-current="page"]{color:var(--sunset);text-decoration:underline;
 .bform-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .bform-error{padding:.75rem 1rem;border:2px solid var(--chili);border-radius:.5rem;color:var(--chili);font-weight:700}
 @media (max-width:420px){.bform-row{grid-template-columns:1fr}}
+
+/* taalknop in de header */
+.lang-switch{position:relative}
+.lang-switch summary{list-style:none;cursor:pointer;display:grid;place-items:center;min-width:2.75rem;height:2.75rem;padding:0 .6rem;border-radius:999px;border:2px solid var(--ink);background:var(--paper);box-shadow:var(--shadow-stamp);font-weight:800;font-size:.8rem;letter-spacing:.06em;color:var(--ink)}
+.lang-switch summary::-webkit-details-marker{display:none}
+.lang-switch ul{position:absolute;right:0;top:calc(100% + .5rem);z-index:50;list-style:none;margin:0;padding:.35rem;min-width:10rem;background:var(--cream);border:2px solid var(--ink);border-radius:.75rem;box-shadow:var(--shadow-print)}
+.lang-switch li a{display:block;padding:.6rem .8rem;border-radius:.5rem;color:var(--ink);text-decoration:none;font-weight:600}
+.lang-switch li a:hover{background:color-mix(in oklab,var(--sun) 25%,transparent)}
+.lang-switch li a[aria-current="true"]{color:var(--sunset);font-weight:800}
+.lang-switch summary:focus-visible,.lang-switch a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
