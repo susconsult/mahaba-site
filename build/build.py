@@ -66,7 +66,7 @@ def hero():
     h = part("hero")
     h = re.sub(r'<img src="/assets/img/beach-huts\.jpg"[^>]*>',
                '<video class="photo bg-paper absolute inset-0 -z-30 h-full rounded-none hero-video" autoplay muted loop playsinline preload="auto" '
-               'poster="/assets/hero-drone.jpg?v=2" aria-hidden="true"><source src="/assets/hero-drone.mp4?v=2" type="video/mp4"></video>'
+               'poster="/assets/hero-drone.jpg?v=3" aria-hidden="true"><source src="/assets/hero-drone.mp4?v=3" type="video/mp4"></video>'
                '<div aria-hidden="true" class="hero-warm absolute inset-0 -z-20"></div>', h)
     h = sub(h, 'href="#contact"', 'href="/getting-here#contact"')
     h = sub(h, 'href="#tours"', 'href="/bloops-tours"')
