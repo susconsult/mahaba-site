@@ -86,3 +86,14 @@ header nav a[aria-current="page"]{color:var(--sunset);text-decoration:underline;
 .lang-switch li a:hover{background:color-mix(in oklab,var(--sun) 25%,transparent)}
 .lang-switch li a[aria-current="true"]{color:var(--sunset);font-weight:800}
 .lang-switch summary:focus-visible,.lang-switch a:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+@media (max-width:440px){
+  .header-actions{gap:.4rem}
+  header a[href$="/"] > img, header a[href="/"] > img{height:2.4rem}
+  .header-actions > a{padding-left:.9rem;padding-right:.9rem}
+  .lang-switch summary,.mnav summary{width:2.5rem;min-width:2.5rem;height:2.5rem;padding:0}
+}
+@media (max-width:380px){
+  header a[href$="/"] > img, header a[href="/"] > img{height:2rem}
+  .header-actions > a{padding-left:.7rem;padding-right:.7rem}
+}
+@media (max-width:340px){.header-actions > a{display:none}}

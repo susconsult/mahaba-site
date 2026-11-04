@@ -41,6 +41,17 @@ Wolfpakket van SUS Consult. Statische site, gepubliceerd als Cloudflare Worker `
 
 Lokaal testen: `.dev.vars` met `SHEET_URL=...` (staat in `.gitignore`), dan `npx wrangler dev`.
 
+## Talen
+
+- Engels is de bron: `public/*.html`. Vertaalde kopieën staan in `public/sw/`, `public/fr/`, `public/es/`, `public/de/` (adressen `/fr/stay` enz.). **Die niet met de hand aanpassen**, ze worden gemaakt door `build/i18n.py`.
+- Werkwijze bij een tekstwijziging: Engelse pagina aanpassen → `python3 build/i18n.py extract` → nieuwe/gewijzigde teksten vertalen in `build/i18n/{sw,fr,es,de}.json` (regels: `build/i18n/RULES.md`) → `python3 build/i18n.py build` → alles committen. Het script weigert te bouwen zolang er een vertaling ontbreekt.
+- Wijziging aan header/footer of stijl: Engelse pagina's aanpassen en `build` draaien; de taalknop, hreflang/canonical en het verborgen veld `lang` in het formulier worden er telkens opnieuw in gezet (tussen `<!--i18n-->`-markeringen).
+- Taalknop (EN/SW/FR/ES/DE) in de header. Eerste bezoek op een Engelse pagina: doorsturen naar de browsertaal als die sw/fr/es/de is; de keuze wordt onthouden in `localStorage` (`mb_lang`), daarna nooit meer automatisch doorsturen. Geen cookies.
+- Formulier: veld `lang` → bedankpagina/foutmelding in dezelfde taal; in de sheet staat de taal vooraan in het bericht, bv. `[Français] ...`.
+- Swahili labels (karibu, pole pole, hakuna matata ...) blijven in alle talen staan.
+- Vertalingen gemaakt door Claude (nov 2026), niet nagekeken door moedertaalsprekers. Swahili: Bea/Saddy laten nakijken. Swahili prijslijst gebruikt Swahili-uren (saa 3 asubuhi = 9u).
+- `sitemap.xml` bevat alle talen met hreflang.
+
 ## Beelden
 
 `public/assets/img/` — foto's van Mahaba, verkleind voor het web. `public/assets/hero-drone.mp4` is een lus van 15 s uit de drone-video (zonder geluid). Begint met het zeeshot (bootjes langs het strand), dan de banda; geen fade naar zwart, eind vloeit naadloos over in het begin. Poster `hero-drone.jpg` = eerste beeld. Logo en badge: `public/assets/logo-mahaba-beach.png`, `public/assets/badge-mahaba-beach.png`.
