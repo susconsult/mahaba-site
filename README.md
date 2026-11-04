@@ -88,6 +88,7 @@ Lokaal testen: `.dev.vars` met `SHEET_URL=...` (staat in `.gitignore`), dan `npx
 - Foto's (nov 2026): bar-wood, banda-wide, bbq-sign op /food; porch, room-bed, room-side op /stay; bloops-shop op /bloops-tours; beach-huts in de home-galerij. Geen foto van de Bloops-boot (niet nodig volgens Pieter).
 - Foto's (nov 2026, 2e reeks): Bloops-galerij (boot, instappen, boeg, zandbank, gasten, video bloops-boat.mp4 zonder geluid, shop, materiaal); overlanders (Defender, Unimog) op /stay; mahaba-from-sea in home-galerij.
 - Food: geen restaurant met menu; eten enkel op reservatie — ze kopen vers bij vissers en markt en koken het. Knop 'Reserve a meal' naar het formulier (`?for=meal`). Getting here: coast-from-sea en overland-saviem.
+- Hero-video: lichte warme filter (sepia .1, saturate 1.08, contrast 1.02); was sterker, op vraag van Pieter verminderd (nov 2026).
 - Drukwerk voor Bea: **A4-poster** en **A5-flyer**. Flyer 5 pagina's: logo / kamers + restaurant / Bloops / contact (mail, website, WhatsApp, ligging) / package. Op drukwerk mag WhatsApp wel (op de site niet). Moet zowel in zwart-wit als in kleur goed printen (contrast niet enkel via kleur, geen tekst op foto zonder vlak erachter).
 - Swahili-labels (nov 2026, `lang="sw"`): Karibu nyumbani, samaki wabichi (home), lala salama (stay), karibu chakula + pole pole (food), twende baharini + hakuna matata (bloops), safari njema (getting here), pole! (404). Nog niet door Bea nagekeken.
 - Zandbank = Fungu Yasini (Bea schrijft "Yassini"; site houdt "Yasini").

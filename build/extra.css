@@ -1,7 +1,7 @@
 /* Aanvullingen op het Lovable-ontwerp (lovable.css). Alleen wat Lovable niet had. */
 
 /* warme filter over de drone-video in de hero */
-.hero-video{filter:sepia(.3) saturate(1.25) contrast(1.05) brightness(1.03)}
+.hero-video{filter:sepia(.1) saturate(1.08) contrast(1.02)}
 .hero-warm{background:linear-gradient(180deg,rgb(246 183 51 / .45) 0%,rgb(232 109 34 / .3) 70%);mix-blend-mode:soft-light;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.hero-video{display:none}#top{background:var(--deep) url(/assets/hero-drone.jpg) center/cover}}
 
