@@ -121,7 +121,8 @@
  },
  "Round platter of grilled lobster tails with lemon on a wooden table": {
   "pages": [
-   "index"
+   "index",
+   "food"
   ],
   "kind": "attr"
  },
@@ -133,7 +134,8 @@
  },
  "Guest houses with grey roofs around a green lawn with palm trees": {
   "pages": [
-   "index"
+   "index",
+   "stay"
   ],
   "kind": "attr"
  },
@@ -145,7 +147,8 @@
  },
  "White sand beach with palm trees and thatched huts at Mahaba": {
   "pages": [
-   "index"
+   "index",
+   "stay"
   ],
   "kind": "attr"
  },
@@ -509,6 +512,12 @@
   ],
   "kind": "attr"
  },
+ "Veranda with white arches, a wooden chair and plants in the garden": {
+  "pages": [
+   "stay"
+  ],
+  "kind": "attr"
+ },
  "Camel Trophy Land Rover Defender parked between the trees and thatched huts": {
   "pages": [
    "stay"
@@ -612,6 +621,12 @@
   "kind": "attr"
  },
  "Cook presenting a whole grilled fish on a banana leaf": {
+  "pages": [
+   "food"
+  ],
+  "kind": "attr"
+ },
+ "Grilled lobsters lined up on a banana leaf": {
   "pages": [
    "food"
   ],
