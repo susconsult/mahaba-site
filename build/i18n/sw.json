@@ -63,7 +63,6 @@
  "Facebook": "Facebook",
  "×": "×",
  "Stay – Mahaba Beach, Ununio": "Malazi – Mahaba Beach, Ununio",
- "Rooms at Mahaba Beach for $45 per night for two people, with mosquito net, private bathroom and air conditioning. Beach camping $10 per person.": "Vyumba Mahaba Beach kwa $45 kwa usiku kwa watu wawili, vyenye chandarua, bafu binafsi na kiyoyozi. Kambi ufukweni $10 kwa mtu.",
  "Double bed with a white mosquito net canopy in a Mahaba guest room": "Kitanda cha watu wawili chenye chandarua cheupe katika chumba cha wageni Mahaba",
  "Shaded veranda with a carved wooden chair outside a guest room": "Veranda yenye kivuli na kiti cha mbao cha nakshi nje ya chumba cha wageni",
  "Private bathroom with walk-in shower and washbasin": "Bafu binafsi lenye bafu la kuoga na sinki",
@@ -191,5 +190,7 @@
  "Lost at <em class=\"text-ocean\">sea?</em>": "Umepotea <em class=\"text-ocean\">baharini?</em>",
  "This page does not exist. Head back to the beach.": "Ukurasa huu haupo. Rudi ufukweni.",
  "Veranda with white arches, a wooden chair and plants in the garden": "Veranda yenye matao meupe, kiti cha mbao na mimea bustanini",
- "Grilled lobsters lined up on a banana leaf": "Kamba wakubwa wa kuchoma wamepangwa juu ya jani la mgomba"
+ "Grilled lobsters lined up on a banana leaf": "Kamba wakubwa wa kuchoma wamepangwa juu ya jani la mgomba",
+ "WiFi": "WiFi",
+ "Rooms at Mahaba Beach for $45 per night for two people, with mosquito net, private bathroom, air conditioning and WiFi. Beach camping $10 per person.": "Vyumba Mahaba Beach kwa $45 kwa usiku kwa watu wawili, vyenye chandarua, bafu binafsi, kiyoyozi na WiFi. Kambi ufukweni $10 kwa mtu."
 }

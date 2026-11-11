@@ -470,7 +470,7 @@
   ],
   "kind": "title"
  },
- "Rooms at Mahaba Beach for $45 per night for two people, with mosquito net, private bathroom and air conditioning. Beach camping $10 per person.": {
+ "Rooms at Mahaba Beach for $45 per night for two people, with mosquito net, private bathroom, air conditioning and WiFi. Beach camping $10 per person.": {
   "pages": [
    "stay"
   ],
@@ -567,6 +567,12 @@
   "kind": "text"
  },
  "Air conditioning": {
+  "pages": [
+   "stay"
+  ],
+  "kind": "text"
+ },
+ "WiFi": {
   "pages": [
    "stay"
   ],
